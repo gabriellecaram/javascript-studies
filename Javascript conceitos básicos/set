@@ -1,0 +1,38 @@
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+// remover duplicatas de uma lista
+// o código new Set(), com "S" maiúsculo.
+// Dentro dos parênteses de Set(), passaremos nosso array nomes, que criamos anteriormente. Então, Set(nomes). 
+
+const nomes = ["Ana", "Clara", "Maria", "Maria", "João", "João", "João"];
+console.log('Nomes: ',nomes);
+
+const nomesAtualizados = new Set(nomes);
+
+console.log(nomesAtualizados); //Set(4) { 'Ana', 'Clara', 'Maria', 'João' }
+
+
+// O Set é um CONJUNTO, e um conjunto é um tipo de dado que armazena valores ÚNICOS, 
+// ao contrário do array, que pode ter elementos repetidos à vontade. 
+// Costumamos dizer que o Set é um tipo de dado que é array-like (parecido com um array), mas ele não é um array.
+
+// Se tentarmos utilizar métodos de array com o Set, ele não vai funcionar. 
+// Por exemplo, vamos tentar usar nomesAtualizados.push('Juliana'), antes do console.log(), 
+// para adicionar o nome "Juliana" no final desse Set.
+
+
+// nomesAtualizados.push('Juliana');
+// console.log(nomesAtualizados);
+
+
+//transformar conjunto em array 
+const listaAtt = [...nomesAtualizados];
+console.log('Nomes att:', nomesAtualizados);
+console.log('Lista att: ',listaAtt);
+
+//pode fazer tudo de uma vez só:
+const listaAttShort = [...new Set(nomes)];
+console.log('Lista att reduzida: ', listaAttShort)
+
+
+// https://cursos.alura.com.br/course/javascript-conhecendo-arrays/task/148978
